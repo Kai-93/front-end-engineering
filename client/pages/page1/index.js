@@ -11,7 +11,7 @@ import flexible from '../../tool/flexible'
         require('../../components/popup/popup.scss')
         let data = {
             'title': '提示',
-            'content': '这是弹窗内容',
+            'content': '这是弹窗内容123',
             'cancel': {
                 'text': '取消',
                 'event': () => {

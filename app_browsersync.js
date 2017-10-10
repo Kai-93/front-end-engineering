@@ -8,7 +8,7 @@ let express = require('express'),
 
 let isDev = process.env.NODE_ENV !== 'production';
 let app = express();
-let ip = 'http://localhost:'
+const localhost = require('./webpack.public.config')
 let port = 8081;
 
 app.engine('html', consolidate.ejs); // config template engine
@@ -51,7 +51,7 @@ if (isDev) {
             open: false,
             ui: false,
             notify: false,
-            proxy: `${ip}${port}`,
+            proxy: `${localhost.localhost}${port}`,
             files: ['./server/views/**'],
             port: 8082
         });

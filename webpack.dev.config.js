@@ -8,7 +8,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
-const publicPath = 'http://localhost:8081/';
+const localhost = require('./webpack.public.config')
+const publicPath = `${localhost.localhost}8081/`;
 const outputPublicPath = './client'
 module.exports = {
     devtool: '#source-map',
@@ -122,5 +123,4 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.coffee']
     }
-}
-;
+};

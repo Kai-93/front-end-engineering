@@ -8,7 +8,7 @@ let express = require('express'),
 
 let isDev = process.env.NODE_ENV !== 'production';
 let app = express();
-let port = 3000;
+let port = 8081;
 
 app.engine('html', consolidate.ejs); // config template engine
 app.set('view engine', 'html'); // set key value

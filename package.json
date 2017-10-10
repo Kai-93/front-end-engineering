@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "cross-env NODE_ENV=dev supervisor -w server,app.js -e node,js,html app",
-    "dev": "webpack-dev-server --config webpack.dev.config.js",
+    "abandon---dev": "webpack-dev-server --config webpack.dev.config.js",
     "bs": "cross-env NODE_ENV=dev node app_browsersync.js",
     "build": "webpack --config webpack.dev.config.js -d --progress --display-modules --colors --display-reasons --env production"
   },

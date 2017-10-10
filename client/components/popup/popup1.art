@@ -1,0 +1,11 @@
+<div class="popup">
+    <div class="cover"></div>
+    <div class="popup-container">
+        <header class="title">{{title}}</header>
+        <section class="content">{{content}}</section>
+        <footer class="footer">
+            <a href="javascript:;" class="btn cancel">{{cancel['text']}}</a>
+            <a href="javascript:;" class="btn confirm">{{confirm['text']}}</a>
+        </footer>
+    </div>
+</div>

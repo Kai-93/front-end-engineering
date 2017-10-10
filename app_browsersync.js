@@ -8,6 +8,7 @@ let express = require('express'),
 
 let isDev = process.env.NODE_ENV !== 'production';
 let app = express();
+let ip = 'http://localhost:'
 let port = 8081;
 
 app.engine('html', consolidate.ejs); // config template engine
@@ -50,7 +51,7 @@ if (isDev) {
             open: false,
             ui: false,
             notify: false,
-            proxy: `localhost:${port}`,
+            proxy: `${ip}${port}`,
             files: ['./server/views/**'],
             port: 8082
         });
@@ -61,6 +62,6 @@ if (isDev) {
     app.use(express.static(path.join(__dirname, './dist')));
     require('./server/routes')(app);
     app.listen(port, function () {
-        console.log('App (production) is now running on port 3000!');
+        console.log('App (production) is now running on port 8081!');
     });
 }

@@ -1,7 +1,7 @@
 {
-  "name": "yanshanpk",
+  "name": "front-end",
   "version": "1.0.0",
-  "description": "game",
+  "description": "front-end",
   "main": "gulpfile.js",
   "author": "Kaiser",
   "license": "ISC",

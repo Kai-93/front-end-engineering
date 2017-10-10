@@ -5,17 +5,24 @@ const path = require('path')
 const webpack = require('webpack')
 const eslintFriendlyFormatter = require('eslint-friendly-formatter')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
+const argv = require('yargs').argv;
 
 const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 const localhost = require('./webpack.public.config')
 const publicPath = `${localhost.localhost}8081/`;
 const outputPublicPath = './client'
+let entryFilter = (str) => {
+    if (argv.env === 'production') {
+        return str
+    }
+    return [str, hotMiddlewareScript]
+}
 module.exports = {
     devtool: '#source-map',
     entry: {
-        pagename1: [`${outputPublicPath}/pages/page1/index.js`, hotMiddlewareScript],
-        pagename2: [`${outputPublicPath}/pages/page2/index.js`, hotMiddlewareScript]
+        pagename1: entryFilter(`${outputPublicPath}/pages/page1/index.js`),
+        pagename2: entryFilter(`${outputPublicPath}/pages/page2/index.js`)
     },
     output: {
         // __dirname，就是当前webpack.config.js文件所在的绝对路径

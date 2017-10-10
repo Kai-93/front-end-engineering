@@ -9,7 +9,7 @@
     "start": "cross-env NODE_ENV=dev supervisor -w server,app.js -e node,js,html app",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "bs": "cross-env NODE_ENV=dev node app_browsersync.js",
-    "build": "webpack --config webpack.dev.config.js -d --progress --display-modules --colors --display-reasons"
+    "build": "webpack --config webpack.dev.config.js -d --progress --display-modules --colors --display-reasons --env production"
   },
   "devDependencies": {
     "art-template": "^4.12.1",
